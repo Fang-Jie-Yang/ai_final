@@ -17,13 +17,32 @@ class ProbabilityPlayer(BasePokerPlayer):
         fold_action = valid_actions[0]
         call_action = valid_actions[1]
         raise_action = valid_actions[2]
+        
 
+            
         if round_state["street"] == "preflop":
-            # simply call in preflop
-            # TODO: try to eval head strength 
-            action = call_action["action"]
-            amount = call_action["amount"]
+            stack0 = round_state["seats"][0]["stack"]
+            stack1 = round_state["seats"][1]["stack"]
+            if round_state["seats"][0]["uuid"] == self.uuid:
+                lead = stack0 - stack1
+            else:
+                lead = stack1 - stack0
+            print("|Prob Player|: leading", lead)
+
+            remaining_rounds = 20 - round_state["round_count"]
+            loses = round_state["small_blind_amount"] * 2
+            # if winning, we fold till the end
+            if lead - remaining_rounds * loses > 0:
+                action = fold_action["action"]
+                amount = fold_action["amount"]
+                print("|Prob Player|: We winning!")
+            # else, we play properly
+            else:
+                # TODO: try to eval hand strength 
+                action = call_action["action"]
+                amount = call_action["amount"]
         else:
+            print("|Prob Player|: Calculating")
             # calculate probability of winning or tie
             board = [self.__convert_card_format(card) for card in round_state["community_card"]]
             holes = [self.__convert_card_format(card) for card in hole_card]
@@ -34,11 +53,11 @@ class ProbabilityPlayer(BasePokerPlayer):
             win = probs[1]
             # decide action based on probability
             good_prob = tie + win
-            print("*Prob Player*:", good_prob)
-            if good_prob < 0.2:
+            print("|Prob Player|:", good_prob)
+            if good_prob < 0.6:
                 action = fold_action["action"]
                 amount = fold_action["amount"]
-            elif good_prob >= 0.2 and good_prob < 0.8:
+            elif good_prob >= 0.6 and good_prob < 0.8:
                 action = call_action["action"]
                 amount = call_action["amount"]
             elif good_prob >= 0.8:
