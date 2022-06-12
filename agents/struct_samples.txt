@@ -1,0 +1,703 @@
+Started the round 1
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1000}}]
+['D4', 'C8']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 1, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 995, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['HQ', 'HA', 'DK'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['D4', 'C8']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HQ', 'HA', 'DK'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 1, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['HQ', 'HA', 'DK', 'S9'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['D4', 'C8']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HQ', 'HA', 'DK', 'S9'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 1, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['HQ', 'HA', 'DK', 'S9', 'C4'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['D4', 'C8']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HQ', 'HA', 'DK', 'S9', 'C4'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 1, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 1 (stack = {'p1': 990, 'p2': 1010})
+Started the round 2
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1010}}]
+['H5', 'S7']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 2, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['H7', 'S3', 'C8'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['H5', 'S7']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['H7', 'S3', 'C8'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 2, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['H7', 'S3', 'C8', 'C9'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['H5', 'S7']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['H7', 'S3', 'C8', 'C9'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 2, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['H7', 'S3', 'C8', 'C9', 'CT'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['H5', 'S7']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['H7', 'S3', 'C8', 'C9', 'CT'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 2, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p1']" won the round 2 (stack = {'p1': 1000, 'p2': 1000})
+Started the round 3
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1000}}]
+['CK', 'C6']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 3, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 995, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['HJ', 'H6', 'S3'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['CK', 'C6']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'H6', 'S3'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 3, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['HJ', 'H6', 'S3', 'D4'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['CK', 'C6']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'H6', 'S3', 'D4'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 3, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['HJ', 'H6', 'S3', 'D4', 'DT'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['CK', 'C6']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'H6', 'S3', 'D4', 'DT'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 3, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 3 (stack = {'p1': 990, 'p2': 1010})
+Started the round 4
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1010}}]
+['C7', 'ST']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 4, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['HA', 'C2', 'CT'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['C7', 'ST']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HA', 'C2', 'CT'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 4, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['HA', 'C2', 'CT', 'CJ'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['C7', 'ST']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HA', 'C2', 'CT', 'CJ'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 4, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['HA', 'C2', 'CT', 'CJ', 'SQ'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['C7', 'ST']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HA', 'C2', 'CT', 'CJ', 'SQ'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 4, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p1']" won the round 4 (stack = {'p1': 1000, 'p2': 1000})
+Started the round 5
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1000}}]
+['HK', 'DJ']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 5, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 995, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['D5', 'SJ', 'CJ'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['HK', 'DJ']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D5', 'SJ', 'CJ'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 5, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['D5', 'SJ', 'CJ', 'SQ'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['HK', 'DJ']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D5', 'SJ', 'CJ', 'SQ'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 5, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['D5', 'SJ', 'CJ', 'SQ', 'HJ'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 990}}]
+['HK', 'DJ']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D5', 'SJ', 'CJ', 'SQ', 'HJ'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 5, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 990, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 990, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 5 (stack = {'p1': 990, 'p2': 1010})
+Started the round 6
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1010}}]
+['H7', 'ST']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 6, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['DT', 'H9', 'HT'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['H7', 'ST']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['DT', 'H9', 'HT'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 6, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['DT', 'H9', 'HT', 'DQ'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['H7', 'ST']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['DT', 'H9', 'HT', 'DQ'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 6, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['DT', 'H9', 'HT', 'DQ', 'H3'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1000}}]
+['H7', 'ST']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['DT', 'H9', 'HT', 'DQ', 'H3'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 6, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 980, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1000, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p2']" won the round 6 (stack = {'p1': 980, 'p2': 1020})
+Started the round 7
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1020}}]
+['D4', 'HK']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 7, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1015, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['D5', 'H7', 'CK'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['D4', 'HK']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D5', 'H7', 'CK'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 7, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['D5', 'H7', 'CK', 'S5'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['D4', 'HK']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D5', 'H7', 'CK', 'S5'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 7, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['D5', 'H7', 'CK', 'S5', 'CA'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['D4', 'HK']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D5', 'H7', 'CK', 'S5', 'CA'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 7, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 7 (stack = {'p1': 970, 'p2': 1030})
+Started the round 8
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1030}}]
+['S2', 'CK']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 8, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['C7', 'CJ', 'CQ'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['S2', 'CK']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C7', 'CJ', 'CQ'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 8, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['C7', 'CJ', 'CQ', 'D8'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['S2', 'CK']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C7', 'CJ', 'CQ', 'D8'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 8, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['C7', 'CJ', 'CQ', 'D8', 'H7'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['S2', 'CK']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C7', 'CJ', 'CQ', 'D8', 'H7'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 8, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p1']" won the round 8 (stack = {'p1': 980, 'p2': 1020})
+Started the round 9
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1020}}]
+['DT', 'C2']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 9, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1015, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['S4', 'SA', 'H9'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['DT', 'C2']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['S4', 'SA', 'H9'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 9, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['S4', 'SA', 'H9', 'DQ'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['DT', 'C2']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['S4', 'SA', 'H9', 'DQ'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 9, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['S4', 'SA', 'H9', 'DQ', 'C7'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['DT', 'C2']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['S4', 'SA', 'H9', 'DQ', 'C7'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 9, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 9 (stack = {'p1': 970, 'p2': 1030})
+Started the round 10
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1030}}]
+['CQ', 'H8']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 10, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['D4', 'S5', 'DK'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['CQ', 'H8']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D4', 'S5', 'DK'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 10, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['D4', 'S5', 'DK', 'ST'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['CQ', 'H8']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D4', 'S5', 'DK', 'ST'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 10, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['D4', 'S5', 'DK', 'ST', 'D6'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['CQ', 'H8']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['D4', 'S5', 'DK', 'ST', 'D6'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 10, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p2']" won the round 10 (stack = {'p1': 960, 'p2': 1040})
+Started the round 11
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1040}}]
+['C8', 'SA']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 11, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1035, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['DT', 'CK', 'D9'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1030}}]
+['C8', 'SA']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['DT', 'CK', 'D9'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 11, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1030, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['DT', 'CK', 'D9', 'HQ'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1030}}]
+['C8', 'SA']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['DT', 'CK', 'D9', 'HQ'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 11, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1030, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['DT', 'CK', 'D9', 'HQ', 'D6'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1030}}]
+['C8', 'SA']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['DT', 'CK', 'D9', 'HQ', 'D6'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 11, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1030, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p1']" won the round 11 (stack = {'p1': 970, 'p2': 1030})
+Started the round 12
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1030}}]
+['D8', 'S4']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 12, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['H6', 'C3', 'S7'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['D8', 'S4']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['H6', 'C3', 'S7'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 12, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['H6', 'C3', 'S7', 'H7'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['D8', 'S4']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['H6', 'C3', 'S7', 'H7'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 12, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['H6', 'C3', 'S7', 'H7', 'H9'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['D8', 'S4']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['H6', 'C3', 'S7', 'H7', 'H9'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 12, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p1']" won the round 12 (stack = {'p1': 980, 'p2': 1020})
+Started the round 13
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1020}}]
+['S8', 'CJ']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 13, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1015, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['C6', 'C8', 'HT'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['S8', 'CJ']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C6', 'C8', 'HT'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 13, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['C6', 'C8', 'HT', 'H8'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['S8', 'CJ']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C6', 'C8', 'HT', 'H8'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 13, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['C6', 'C8', 'HT', 'H8', 'SQ'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['S8', 'CJ']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C6', 'C8', 'HT', 'H8', 'SQ'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 13, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 13 (stack = {'p1': 970, 'p2': 1030})
+Started the round 14
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1030}}]
+['S4', 'H5']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 14, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['C8', 'S3', 'C2'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['S4', 'H5']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C8', 'S3', 'C2'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 14, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['C8', 'S3', 'C2', 'DJ'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['S4', 'H5']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C8', 'S3', 'C2', 'DJ'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 14, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['C8', 'S3', 'C2', 'DJ', 'HA'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['S4', 'H5']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C8', 'S3', 'C2', 'DJ', 'HA'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 14, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p1']" won the round 14 (stack = {'p1': 980, 'p2': 1020})
+Started the round 15
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1020}}]
+['CQ', 'D2']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 15, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1015, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['HJ', 'C8', 'H9'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['CQ', 'D2']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'C8', 'H9'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 15, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['HJ', 'C8', 'H9', 'DT'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['CQ', 'D2']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'C8', 'H9', 'DT'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 15, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['HJ', 'C8', 'H9', 'DT', 'S8'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['CQ', 'D2']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'C8', 'H9', 'DT', 'S8'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 15, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 15 (stack = {'p1': 970, 'p2': 1030})
+Started the round 16
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1030}}]
+['SA', 'HK']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 16, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['CJ', 'D2', 'DT'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['SA', 'HK']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['CJ', 'D2', 'DT'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 16, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['CJ', 'D2', 'DT', 'H2'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['SA', 'HK']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['CJ', 'D2', 'DT', 'H2'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 16, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['CJ', 'D2', 'DT', 'H2', 'S7'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['SA', 'HK']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['CJ', 'D2', 'DT', 'H2', 'S7'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 16, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p1']" won the round 16 (stack = {'p1': 980, 'p2': 1020})
+Started the round 17
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1020}}]
+['S6', 'C8']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 17, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1015, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['C2', 'S7', 'D6'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['S6', 'C8']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C2', 'S7', 'D6'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 17, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['C2', 'S7', 'D6', 'HA'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['S6', 'C8']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C2', 'S7', 'D6', 'HA'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 17, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['C2', 'S7', 'D6', 'HA', 'D8'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1010}}]
+['S6', 'C8']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['C2', 'S7', 'D6', 'HA', 'D8'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 17, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 970, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1010, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 17 (stack = {'p1': 970, 'p2': 1030})
+Started the round 18
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1030}}]
+['D9', 'SJ']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 18, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['CA', 'S7', 'C8'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['D9', 'SJ']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['CA', 'S7', 'C8'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 18, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['CA', 'S7', 'C8', 'CQ'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['D9', 'SJ']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['CA', 'S7', 'C8', 'CQ'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 18, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['CA', 'S7', 'C8', 'CQ', 'H7'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1020}}]
+['D9', 'SJ']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['CA', 'S7', 'C8', 'CQ', 'H7'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 18, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 960, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1020, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p2']" won the round 18 (stack = {'p1': 960, 'p2': 1040})
+Started the round 19
+Street "preflop" started. (community card = [])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1040}}]
+['H8', 'S5']
+{'street': 'preflop', 'pot': {'main': {'amount': 15}, 'side': []}, 'community_card': [], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 19, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1035, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+"p1" declared "call:10"
+Street "flop" started. (community card = ['S9', 'CQ', 'DJ'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1030}}]
+['H8', 'S5']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['S9', 'CQ', 'DJ'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 19, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1030, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "turn" started. (community card = ['S9', 'CQ', 'DJ', 'H5'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1030}}]
+['H8', 'S5']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['S9', 'CQ', 'DJ', 'H5'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 19, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1030, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+Street "river" started. (community card = ['S9', 'CQ', 'DJ', 'H5', 'D7'])
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1030}}]
+['H8', 'S5']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['S9', 'CQ', 'DJ', 'H5', 'D7'], 'dealer_btn': 0, 'next_player': 1, 'small_blind_pos': 1, 'big_blind_pos': 0, 'round_count': 19, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 950, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1030, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}], 'river': []}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"p1" declared "call:0"
+"['p2']" won the round 19 (stack = {'p1': 950, 'p2': 1050})
+Started the round 20
+Street "preflop" started. (community card = [])
+"p1" declared "call:10"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 1050}}]
+['H4', 'H3']
+{'street': 'preflop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': [], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 20, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 940, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1040, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:10"
+Street "flop" started. (community card = ['HJ', 'C9', 'S3'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1040}}]
+['H4', 'H3']
+{'street': 'flop', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'C9', 'S3'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 20, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 940, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1040, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "turn" started. (community card = ['HJ', 'C9', 'S3', 'DT'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1040}}]
+['H4', 'H3']
+{'street': 'turn', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'C9', 'S3', 'DT'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 20, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 940, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1040, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+Street "river" started. (community card = ['HJ', 'C9', 'S3', 'DT', 'SQ'])
+"p1" declared "call:0"
+---------------------------------------------------------------
+[{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 1040}}]
+['H4', 'H3']
+{'street': 'river', 'pot': {'main': {'amount': 20}, 'side': []}, 'community_card': ['HJ', 'C9', 'S3', 'DT', 'SQ'], 'dealer_btn': 1, 'next_player': 1, 'small_blind_pos': 0, 'big_blind_pos': 1, 'round_count': 20, 'small_blind_amount': 5, 'seats': [{'name': 'p1', 'uuid': 'zimendsbjutwhcrbltqtwy', 'stack': 940, 'state': 'participating'}, {'name': 'p2', 'uuid': 'cthqtndoioyahnrrtosszp', 'stack': 1040, 'state': 'participating'}], 'action_histories': {'preflop': [{'action': 'SMALLBLIND', 'amount': 5, 'add_amount': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'BIGBLIND', 'amount': 10, 'add_amount': 5, 'uuid': 'cthqtndoioyahnrrtosszp'}, {'action': 'CALL', 'amount': 10, 'paid': 5, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 10, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'flop': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'turn': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}, {'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'cthqtndoioyahnrrtosszp'}], 'river': [{'action': 'CALL', 'amount': 0, 'paid': 0, 'uuid': 'zimendsbjutwhcrbltqtwy'}]}}
+---------------------------------------------------------------
+"p2" declared "call:0"
+"['p1']" won the round 20 (stack = {'p1': 960, 'p2': 1040})
+{
+    "rule": {
+        "initial_stack": 1000,
+        "max_round": 20,
+        "small_blind_amount": 5,
+        "ante": 0,
+        "blind_structure": {}
+    },
+    "players": [
+        {
+            "name": "p1",
+            "uuid": "zimendsbjutwhcrbltqtwy",
+            "stack": 960,
+            "state": "participating"
+        },
+        {
+            "name": "p2",
+            "uuid": "cthqtndoioyahnrrtosszp",
+            "stack": 1040,
+            "state": "participating"
+        }
+    ]
+}
