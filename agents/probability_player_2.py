@@ -75,7 +75,7 @@ class ProbabilityPlayer(BasePokerPlayer):
             self.__fill_round_attr(round_state)
 
 
-        print(f"{bcolors.OKGREEN}Pos   : {self.pos}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Pos   : {self.pos}{bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}Paid  : {self.paid}{bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}Stack : {self.stack}{bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}Margin: {self.margin}{bcolors.ENDC}")
@@ -95,16 +95,17 @@ class ProbabilityPlayer(BasePokerPlayer):
 
             # if winning, we fold till the end
             if self.lead - self.margin > 0:
-                print(f"{bcolors.OKGREEN}Decide to fold{bcolors.ENDC}")
+                print(f"{bcolors.OKGREEN}Decide to Fold: winning{bcolors.ENDC}")
                 action = fold_action["action"]
                 amount = fold_action["amount"]
             # else, we play properly
             else:
                 if call_action["amount"] <= self.margin // 2:
+                    print(f"{bcolors.OKGREEN}Decide to Call: default call{bcolors.ENDC}")
                     action = call_action["action"]
                     amount = call_action["amount"]
                 else:
-                    print(f"{bcolors.OKGREEN}Decide to fold{bcolors.ENDC}")
+                    print(f"{bcolors.OKGREEN}Decide to Fold: stack too high{bcolors.ENDC}")
                     action = fold_action["action"]
                     amount = fold_action["amount"]
         else:
@@ -127,21 +128,20 @@ class ProbabilityPlayer(BasePokerPlayer):
             # decide action based on probability
             decided = False
             for i in [0, 1]:
-                print("iter", i)
                 if pWin >= strat[i]:
                     # bet margin//bet[0]
                     target_stack = self.margin // bet[i]
                     if target_stack > self.stack:
                         target_stack = self.stack
 
-                    print("before raise")
                     if raise_action["amount"]["min"] <= target_stack:
+                        print(f"{bcolors.OKGREEN}Decide to Raise: high pWin{bcolors.ENDC}")
                         action = raise_action["action"]
                         amount = target_stack
                         decided = True
                         break
-                    print("before call")
                     if call_action["amount"] <= target_stack:
+                        print(f"{bcolors.OKGREEN}Decide to Call: medium pWin{bcolors.ENDC}")
                         action = call_action["action"]
                         amount = call_action["amount"]
                         decided = True
@@ -150,10 +150,11 @@ class ProbabilityPlayer(BasePokerPlayer):
             if not decided:
                 # if fold loses 
                 if pWin >= 0.6 and self.paid >= self.margin * 2 / 3:
+                    print(f"{bcolors.OKGREEN}Decide to Call: steel head{bcolors.ENDC}")
                     action = call_action["action"]
                     amount = call_action["amount"]
                 else:
-                    print(f"{bcolors.OKGREEN}Decide to fold{bcolors.ENDC}")
+                    print(f"{bcolors.OKGREEN}Decide to Fold: against odds{bcolors.ENDC}")
                     action = fold_action["action"]
                     amount = fold_action["amount"]
 
