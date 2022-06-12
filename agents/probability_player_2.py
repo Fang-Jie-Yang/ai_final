@@ -28,7 +28,6 @@ class ProbabilityPlayer(BasePokerPlayer):
         if round_state["seats"][0]["uuid"] != self.uuid:
             my_stack, op_stack = op_stack, my_stack
 
-        self.stack = my_stack
 
         # check we are SB or BB
         if round_state["seats"][round_state["dealer_btn"]]["uuid"] == self.uuid:
@@ -40,7 +39,16 @@ class ProbabilityPlayer(BasePokerPlayer):
 
         # op may have raised
         if self.pos == "BB":
-            op_stack += (round_state["pot"]["main"]["amount"] - 3 * round_state["small_blind_amount"])
+            op_stack += (round_state["pot"]["main"]["amount"] - 2 * round_state["small_blind_amount"])
+            my_stack += 2 * round_state["small_blind_amount"]
+        else:
+            op_stack += 2 * round_state["small_blind_amount"]
+            my_stack += round_state["small_blind_amount"]
+
+        self.stack = my_stack
+
+        print(f"{bcolors.OKGREEN}my stack   : {my_stack}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}op stack   : {op_stack}{bcolors.ENDC}")
 
         self.lead = my_stack - op_stack
         
@@ -71,24 +79,25 @@ class ProbabilityPlayer(BasePokerPlayer):
         # * self.stack
         # * self.margin
         # * self.lead
+        print(f"{bcolors.OKCYAN}{round_state['street']}{bcolors.ENDC}")
         if round_state["street"] == "preflop":
             self.__fill_round_attr(round_state)
 
 
         #print(f"{bcolors.OKGREEN}Pos   : {self.pos}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}Paid  : {self.paid}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}Stack : {self.stack}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}Margin: {self.margin}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}Lead  : {self.lead}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Paid  : {self.paid}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Stack : {self.stack}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Margin: {self.margin}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Lead  : {self.lead}{bcolors.ENDC}")
 
         # Actions
         fold_action = valid_actions[0]
         call_action = valid_actions[1]
         raise_action = valid_actions[2]
 
-        print(f"{bcolors.OKGREEN}{fold_action}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}{call_action}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}{raise_action}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}{fold_action}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}{call_action}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}{raise_action}{bcolors.ENDC}")
 
         # Action Decision
         if round_state["street"] == "preflop":
@@ -115,8 +124,8 @@ class ProbabilityPlayer(BasePokerPlayer):
             print(f"{bcolors.OKGREEN}pWin  : {pWin}{bcolors.ENDC}")
 
             # Strategies
-            winning_prob_strat, winning_bet = [0.9, 0.5], [4, 6]
-            losing_prob_strat,  losing_bet  = [0.7, 0.3], [3, 6]
+            winning_prob_strat, winning_bet = [0.9, 0.75], [3, 6]
+            losing_prob_strat,  losing_bet  = [0.85, 0.7], [3, 6]
 
             if self.lead > 0:
                 strat = winning_prob_strat
@@ -149,10 +158,18 @@ class ProbabilityPlayer(BasePokerPlayer):
 
             if not decided:
                 # if fold loses 
-                if pWin >= 0.6 and self.paid >= self.margin * 2 / 3:
+                if pWin >= 0.95:
+                    print(f"{bcolors.OKGREEN}Decide to Call: high pWin{bcolors.ENDC}")
+                    action = call_action["action"]
+                    amount = call_action["amount"]
+                elif (self.paid + call_action["amount"]) * (1 - pWin) <= self.margin * 1 / 3:
                     print(f"{bcolors.OKGREEN}Decide to Call: steel head{bcolors.ENDC}")
                     action = call_action["action"]
                     amount = call_action["amount"]
+                elif self.paid <= self.margin * 1 / 4:
+                    print(f"{bcolors.OKGREEN}Decide to Fold: small loses{bcolors.ENDC}")
+                    action = fold_action["action"]
+                    amount = fold_action["amount"]
                 else:
                     print(f"{bcolors.OKGREEN}Decide to Fold: against odds{bcolors.ENDC}")
                     action = fold_action["action"]
