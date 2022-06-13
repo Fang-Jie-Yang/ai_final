@@ -46,8 +46,8 @@ class ProbabilityPlayer(BasePokerPlayer):
 
         self.stack = my_stack
 
-        print(f"{bcolors.OKGREEN}my stack   : {my_stack}{bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}op stack   : {op_stack}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}my stack   : {my_stack}{bcolors.ENDC}")
 
         self.lead = my_stack - op_stack
         
@@ -70,13 +70,17 @@ class ProbabilityPlayer(BasePokerPlayer):
         pTie, pWin, pLose = Probability.calculate(board, True, 1, None, holes, False)
         return pWin
     
-    def __probability_action(self, pWin, fold_action, call_action, raise_action)
+    def __probability_action(self, pWin, fold_action, call_action, raise_action, ratio):
         # Strategies
-        prob_interval = [0.9, 0.6]
-        betting_sizes = [1.5, 0.5]
+        prob_interval = [0.85, 0.5]
+        betting_sizes = [1.0 * ratio, 0.8 * ratio]
         # decide action based on probability
         if pWin >= prob_interval[0]:
-            if call_action["amount"] <= self.margin * betting_sizes[0]:
+            if (self.paid + raise_action["amount"]["min"]) <= self.margin * 0.5:
+                print(f"{bcolors.OKGREEN}Decide to Raise: baiting{bcolors.ENDC}")
+                action = raise_action["action"]
+                amount = self.margin * 0.5
+            elif (self.paid + call_action["amount"]) <= self.margin * betting_sizes[0]:
                 print(f"{bcolors.OKGREEN}Decide to Call: baiting{bcolors.ENDC}")
                 action = call_action["action"]
                 amount = call_action["amount"]
@@ -85,7 +89,7 @@ class ProbabilityPlayer(BasePokerPlayer):
                 action = fold_action["action"]
                 amount = fold_action["amount"]
         elif pWin >= prob_interval[1]:
-            if call_action["amount"] <= self.margin * betting_sizes[1]:
+            if (self.paid + call_action["amount"]) <= self.margin * betting_sizes[1]:
                 print(f"{bcolors.OKGREEN}Decide to Call: baiting{bcolors.ENDC}")
                 action = call_action["action"]
                 amount = call_action["amount"]
@@ -93,6 +97,19 @@ class ProbabilityPlayer(BasePokerPlayer):
                 print(f"{bcolors.OKGREEN}Decide to Fold: stack too high{bcolors.ENDC}")
                 action = fold_action["action"]
                 amount = fold_action["amount"]
+        elif (self.paid + call_action["amount"]) <= self.margin * 0.1:
+            print(f"{bcolors.OKGREEN}Decide to Call: affordable loses{bcolors.ENDC}")
+            action = call_action["action"]
+            amount = call_action["amount"]
+        elif self.paid >= self.margin * 2 / 3:
+            print(f"{bcolors.OKGREEN}Decide to Call: steel head{bcolors.ENDC}")
+            action = call_action["action"]
+            amount = call_action["amount"]
+        else:
+            print(f"{bcolors.OKGREEN}Decide to Fold: against odds{bcolors.ENDC}")
+            action = fold_action["action"]
+            amount = fold_action["amount"]
+
         return action, amount
 
     def declare_action(self, valid_actions, hole_card, round_state):
@@ -149,12 +166,12 @@ class ProbabilityPlayer(BasePokerPlayer):
 
             if round_state["street"] == "flop":
                 # passive play
-                action, amount = self.__probability_action(pWin, fold_action, call_action, raise_action)
+                action, amount = self.__probability_action(pWin, fold_action, call_action, raise_action, 0.8)
             elif round_state["street"] == "turn":
                 # if op baited, we take
-                action, amount = self.__probability_action(pWin, fold_action, call_action, raise_action)
+                action, amount = self.__probability_action(pWin, fold_action, call_action, raise_action, 1.0)
             elif round_state["street"] == "river":
-                action, amount = self.__probability_action(pWin, fold_action, call_action, raise_action)
+                action, amount = self.__probability_action(pWin, fold_action, call_action, raise_action, 1.0)
 
                 
 
