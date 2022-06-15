@@ -61,15 +61,18 @@ class TSPlayer(BasePokerPlayer):
     # return (best_ev, best_action)
     def __tree_search(self, node, player_states):
         
+        me_HS = player_states["me"]["HS"]
+        op_HS = player_states["op"]["HS"]
+
         if node == "me":
             # *FOLD*
             fold_ev = -player_states["me"]["amount"]
             # *CALL*
             call_ev = 0
             if player_states["me"]["pos"] == "second" or player_states["op"]["add_amount"] != -1: # The Street Ends
-                if player_states["me"]["HS"] > player_states["op"]["HS"]:
+                if me_HS > op_HS:
                     call_ev += player_states["op"]["amount"]
-                if player_states["me"]["HS"] < player_states["op"]["HS"]:
+                if me_HS < op_HS:
                     call_ev -= player_states["me"]["amount"]
             else: # The Street Continues
                 if player_states["op"]["amount"] <= player_states["me"]["stack"]:
@@ -79,9 +82,9 @@ class TSPlayer(BasePokerPlayer):
                     call_ev, call_action = self.__tree_search("op", new_player_states)
                 else: 
                     # *ALL-IN*: straight to the showdown
-                    if player_states["me"]["HS"] > player_states["op"]["HS"]:
+                    if me_HS > op_HS:
                         call_ev += player_states["me"]["stack"]
-                    if player_states["me"]["HS"] < player_states["op"]["HS"]:
+                    if me_HS < op_HS:
                         call_ev -= player_states["me"]["stack"]
             # *RAISE*
             best_raise_ev = -float("inf")
@@ -113,29 +116,17 @@ class TSPlayer(BasePokerPlayer):
             return best_ev, best_action
 
         if node == "op":
-            total_ev = 0
-            for op_HS in range(5):
-                # op fold
-                fold_ev = player_states["op"]["amount"]
-                # op call
-                call_ev = 0
-                if STREET END:
-                    for bet in range(MY MIN BET, MY MAX BET, 100):
-                        UPDATE PLAYER STATES
-                        temp_ev, raise_action = self.__tree_search("op", UPDATED player_states)
-                        if temp_ev >= best_raise_ev:
-                            best_raise_ev = temp_ev
-                            best_bet_size = bet
-                else:
-                    search down
-                # op raise
-                CALCULATE RAISE EV
+            # *FOLD*
+            fold_ev = player_states["op"]["amount"]
+            # *CALL*
+            call_ev = 0
+            # *RAISE*
+            raise_ev = 0
 
-                ev = 0
-                ev += opponent_model[op_HS][0] * fold_ev
-                ev += opponent_model[op_HS][1] * call_ev
-                ev += opponent_model[op_HS][2] * raise_ev
-                total_ev += self.op_HS_distribution[op_HS] * ev
+            total_ev = 0
+            total_ev += opponent_model[op_HS][0] * fold_ev
+            total_ev += opponent_model[op_HS][1] * call_ev
+            total_ev += opponent_model[op_HS][2] * raise_ev
 
             return total_ev, None
 
