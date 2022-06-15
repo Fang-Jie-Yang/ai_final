@@ -42,99 +42,112 @@ class
 class TSPlayer(BasePokerPlayer):
 
     #player state
-    #{
-    #    "me": {
+    #[
+    #    Player(We)
+    #    { 
     #        "pos": "first" or "second"
     #        "amount":
     #        "stack":
     #        "add_amount": -1 or real value
     #        "HS":
     #    }
-    #    "op": {
+    #    ,
+    #    Oppoenent
+    #    {
     #        "pos":
     #        "amount":
     #        "stack":
     #        "add_amount": -1 or real value
     #        "HS":
     #    }
-    #}
-    # return (best_ev, best_action)
+    #]
+
+    # return [fold_ev, call_ev, raise0_ev, raise1_ev, ... raiseN_ev]
     def __tree_search(self, node, player_states):
-        
-        me_HS = player_states["me"]["HS"]
-        op_HS = player_states["op"]["HS"]
 
-        if node == "me":
-            # *FOLD*
-            fold_ev = -player_states["me"]["amount"]
-            # *CALL*
-            call_ev = 0
-            if player_states["me"]["pos"] == "second" or player_states["op"]["add_amount"] != -1: # The Street Ends
-                if me_HS > op_HS:
-                    call_ev += player_states["op"]["amount"]
-                if me_HS < op_HS:
-                    call_ev -= player_states["me"]["amount"]
-            else: # The Street Continues
-                if player_states["op"]["amount"] <= player_states["me"]["stack"]:
-                    # *CALL*: Street Continues
-                    new_player_states = copy.deepcopy(player_states)
-                    new_player_states["me"]["amount"] = new_player_states["op"]["amount"]
-                    call_ev, call_action = self.__tree_search("op", new_player_states)
-                else: 
-                    # *ALL-IN*: straight to the showdown
-                    if me_HS > op_HS:
-                        call_ev += player_states["me"]["stack"]
-                    if me_HS < op_HS:
-                        call_ev -= player_states["me"]["stack"]
-            # *RAISE*
-            best_raise_ev = -float("inf")
-            best_bet_size = None
-            if player_states["op"]["add_amount"] == -1:
-                min_amount = player_states["me"]["amount"] + self.BB_amount
-            else:
-                min_amount = player_states["op"]["amount"] + player_states["op"]["add_amount"]
-            # IF CAN RAISE
-            if min_amount <= player_states["me"]["stack"]:
-                for bet in range(min_amount, player_states["me"]["stack"], 100):
-                    # UPDATE PLAYER STATES
-                    new_player_states = copy.deepcopy(player_states)
-                    new_player_states["me"]["add_amount"] = bet - new_player_states["op"]["amount"]
-                    new_player_states["me"]["amount"] = bet
-                    temp_ev, raise_action = self.__tree_search("op", new_player_states)
-                    if temp_ev >= best_raise_ev:
-                        best_raise_ev = temp_ev
-                        best_bet_size = bet
+        my_state = player_states[node]
+        op_state = player_states[not node]
 
-            best_ev = max([fold_ev, call_ev, best_raise_ev])
-            if best_ev == fold_ev:
-                best_action = {"action": "fold", "amount": 0}
-            if best_ev == call_ev:
-                best_action = {"action": "call", "amount": player_states["op"]["amount"]}
-            if best_ev == best_raise_ev:
-                best_action = {"action": "raise", "amount": best_bet_size}
+        # *FOLD*
+        fold_ev = - my_state["amount"]
+        if node == 1:
+            fold_ev *= -1
+        # *CALL*
+        call_ev = 0
+        if my_state["pos"] == "second" or op_state["add_amount"] != -1: # The Street Ends
+            if my_state["HS"] > op_state["HS"]
+                call_ev += op_state["amount"]
+            if me_state["HS"] < op_state["HS"]
+                call_ev -= my_state["amount"]
+            if node == 1:
+                call_ev *= -1
+        else: # The Street Continues
+            if op_state["amount"] <= my_state["stack"]:
+                # *CALL*: Street Continues
+                new_player_states = copy.deepcopy(player_states)
+                new_player_states[node]["amount"] = new_player_states[not node]["amount"]
+                if node == 0:
+                    call_ev = max(self.__tree_search(not node, new_player_states))
+                else:
+                    call_ev = min(self.__tree_search(not node, new_player_states))
+            else: 
+                # *ALL-IN*: straight to the showdown
+                if my_state["HS"] > op_state["HS"]:
+                    call_ev += my_state["stack"]
+                if my_state["HS"] < op_state["HS"]:
+                    call_ev -= my_state["stack"]
+                if node == 1:
+                    call_ev *= -1
+        # *RAISE*
+        raise_evs = []
+        if op_state["add_amount"] == -1:
+            min_amount = my_state["amount"] + self.BB_amount
+        else:
+            min_amount = op_state["amount"] + op_state["add_amount"]
+        # IF CAN RAISE
+        if min_amount <= my_state["stack"]:
+            for bet in range(min_amount, my_state["stack"], 200):
+                # UPDATE PLAYER STATES
+                new_player_states = copy.deepcopy(player_states)
+                new_player_states[node]["add_amount"] = bet - op_state["amount"]
+                new_player_states[node]["amount"] = bet
+                if node == 0:
+                    raise_evs.append(max(self.__tree_search(not node, new_player_states)))
+                else:
+                    raise_evs.append(min(self.__tree_search(not node, new_player_states)))
 
-            return best_ev, best_action
-
-        if node == "op":
-            # *FOLD*
-            fold_ev = player_states["op"]["amount"]
-            # *CALL*
-            call_ev = 0
-            # *RAISE*
-            raise_ev = 0
-
-            total_ev = 0
-            total_ev += opponent_model[op_HS][0] * fold_ev
-            total_ev += opponent_model[op_HS][1] * call_ev
-            total_ev += opponent_model[op_HS][2] * raise_ev
-
-            return total_ev, None
+        return [fold_ev, call_ev].extend(raise_evs)
 
     def declare_action(self, valid_actions, hole_card, round_state):
+
+        #player state
+        #[
+        #    Player(We)
+        #    { 
+        #        "pos": "first" or "second"
+        #        "amount":
+        #        "stack":
+        #        "add_amount": -1 or real value
+        #        "HS":
+        #    }
+        #    ,
+        #    Oppoenent
+        #    {
+        #        "pos":
+        #        "amount":
+        #        "stack":
+        #        "add_amount": -1 or real value
+        #        "HS":
+        #    }
+        #]
+        for op_HS in range(5):
+
 
         return action, amount  # action returned here is sent to the poker engine
 
     # attr
+    # game:
+    #   BB_amount
     # round:
     #   lead, remaining rounds, hole, pos
     # street:
