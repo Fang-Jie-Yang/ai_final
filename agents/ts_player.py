@@ -60,6 +60,7 @@ class TSPlayer(BasePokerPlayer):
 
         return action, amount  # action returned here is sent to the poker engine
         '''
+
         fold_action_info = valid_actions[0]
         call_action_info = valid_actions[1]
         raise_action_info = valid_actions[2]
@@ -73,9 +74,6 @@ class TSPlayer(BasePokerPlayer):
             evs[best_action] += best_ev
         print(f"{bcolors.OKBLUE}{evs}{bcolors.ENDC}")
         choice = np.argmax(evs)
-        if max(evs) == 0:
-            choice = 1
-
         if choice == 0:
             action, amount = fold_action_info["action"], fold_action_info["amount"]
         if choice == 1:
@@ -83,18 +81,18 @@ class TSPlayer(BasePokerPlayer):
         if choice == 2:
             action, amount = raise_action_info["action"], raise_action_info["amount"]["min"]
         if choice == 3:
-            action, amount = raise_action_info["action"], (raise_action_info["amount"]["min"] + raise_action_info["amount"]["min"]) // 3
+            action, amount = raise_action_info["action"], (raise_action_info["amount"]["min"] + raise_action_info["amount"]["max"]) // 3
         print(f"{bcolors.OKBLUE}{action}{bcolors.ENDC}")
 
         return action, amount  # action returned here is sent to the poker engine
-
 
 
     # player state
     # [
     #     Player(We)
     #     { 
-    #         "pos": "first" or "second" -> init at round(street)
+    #         "pos": "first" or "second" -> init at round(preflop)
+    #         "in_pot": init at round(preflop), update with action
     #         "amount": -> init at street, update with action
     #         "stack": -> init at street, update with action
     #         "add_amount": -1 or real value -> init at street, update with action
@@ -104,6 +102,7 @@ class TSPlayer(BasePokerPlayer):
     #     Oppoenent
     #     {
     #         "pos": "first" or "second" -> init at round(street)
+    #         "in_pot": init at round(preflop), update with action
     #         "amount": -> init at street, update with action
     #         "stack": -> init at street, update with action
     #         "add_amount": -1 or real value -> init at street, update with action
@@ -119,8 +118,8 @@ class TSPlayer(BasePokerPlayer):
         self.max_round = game_info["rule"]["max_round"]
         self.SB_amount = game_info["rule"]["small_blind_amount"]
         self.BB_amount = game_info["rule"]["small_blind_amount"] * 2
-        self.player_states = [{"pos": -1, "amount": -1, "stack": -1, "add_amount": -1, "HS": -1},
-                              {"pos": -1, "amount": -1, "stack": -1, "add_amount": -1, "HS": -1}]
+        self.player_states = [{"pos": -1, "amount": -1, "in_pot": -1, "stack": -1, "add_amount": -1, "HS": -1},
+                              {"pos": -1, "amount": -1, "in_pot": -1, "stack": -1, "add_amount": -1, "HS": -1}]
         print(f"{bcolors.OKGREEN}(Game Start) Init player_states{bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}{self.player_states[0]}{bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}{self.player_states[1]}{bcolors.ENDC}")
@@ -179,12 +178,18 @@ class TSPlayer(BasePokerPlayer):
             seat_no = 0
         else:
             seat_no = 1
-        if seat_no == round_state["dealer_btn"]:
-            self.player_states[1]["pos"] = "first"
-            self.player_states[0]["pos"] = "second"
-        else:
-            self.player_states[0]["pos"] = "first"
-            self.player_states[1]["pos"] = "second"
+        if street == "preflop":
+            if seat_no == round_state["dealer_btn"]:
+                self.player_states[1]["pos"] = "first"
+                self.player_states[1]["in_pot"] = self.SB_amount
+                self.player_states[0]["pos"] = "second"
+                self.player_states[0]["in_pot"] = self.BB_amount
+            else:
+                self.player_states[0]["pos"] = "first"
+                self.player_states[0]["in_pot"] = self.SB_amount
+                self.player_states[1]["pos"] = "second"
+                self.player_states[1]["in_pot"] = self.BB_amount
+
         self.player_states[0]["stack"] = round_state["seats"][seat_no]["stack"]
         self.player_states[1]["stack"] = round_state["seats"][not seat_no]["stack"]
 
@@ -227,7 +232,6 @@ class TSPlayer(BasePokerPlayer):
 
     def receive_game_update_message(self, action, round_state):
 
-
         last_action = round_state["action_histories"][self.street][-1]
 
         if last_action["uuid"] == self.uuid:
@@ -240,6 +244,7 @@ class TSPlayer(BasePokerPlayer):
 
         self.player_states[player]["amount"] = last_action["amount"]
         self.player_states[player]["stack"] -= last_action["paid"]
+        self.player_states[player]["in_pot"] += last_action["paid"]
 
         if "add_amount" in last_action:
             self.player_states[player]["add_amount"] = last_action["add_amount"]
@@ -264,13 +269,12 @@ class TSPlayer(BasePokerPlayer):
     # return best_ev, best_action
     def __tree_search(self, node, player_states):
 
-
         my_state = player_states[node]
         op_state = player_states[not node]
 
         # *FOLD*
         #print(f"{bcolors.OKBLUE}FOLD{bcolors.ENDC}")
-        fold_ev = - my_state["amount"]
+        fold_ev = - my_state["in_pot"]
 
         # *CALL*
         #print(f"{bcolors.OKBLUE}CALL{bcolors.ENDC}")
@@ -279,9 +283,9 @@ class TSPlayer(BasePokerPlayer):
             #print(f"{bcolors.OKBLUE}CALL-STOP-1{bcolors.ENDC}")
 
             if my_state["HS"] > op_state["HS"]:
-                call_ev += op_state["amount"]
+                call_ev += op_state["in_pot"]
             if my_state["HS"] < op_state["HS"]:
-                call_ev -= my_state["amount"]
+                call_ev -= op_state["in_pot"]
 
         else: # The Street Continues
             if op_state["amount"] <= my_state["stack"]:
@@ -289,14 +293,16 @@ class TSPlayer(BasePokerPlayer):
                 #print(f"{bcolors.OKBLUE}CALL-RECURR{bcolors.ENDC}")
                 new_player_states = copy.deepcopy(player_states)
                 new_player_states[node]["amount"] = new_player_states[not node]["amount"]
+                new_player_states[node]["stack"] -= (new_player_states[not node]["in_pot"] - new_player_states[node]["in_pot"])
+                new_player_states[node]["in_pot"] = new_player_states[not node]["in_pot"]
                 call_ev, __ = self.__tree_search(not node, new_player_states)
             else: 
                 # *ALL-IN*: straight to the showdown
                 #print(f"{bcolors.OKBLUE}CALL-STOP-2{bcolors.ENDC}")
                 if my_state["HS"] > op_state["HS"]:
-                    call_ev += my_state["stack"]
+                    call_ev += (my_state["in_pot"] + my_state["stack"])
                 if my_state["HS"] < op_state["HS"]:
-                    call_ev -= my_state["stack"]
+                    call_ev -= (my_state["in_pot"] + my_state["stack"])
 
         # *RAISE*
         #print(f"{bcolors.OKBLUE}RAISE{bcolors.ENDC}")
@@ -311,14 +317,20 @@ class TSPlayer(BasePokerPlayer):
 
             small_raise = min_amount + (my_state["stack"] - min_amount) // 4
             new_player_states = copy.deepcopy(player_states)
+            paid = small_raise - new_player_states[node]["amount"]
             new_player_states[node]["add_amount"] = small_raise - op_state["amount"]
             new_player_states[node]["amount"] = small_raise
+            new_player_states[node]["in_pot"] += paid
+            new_player_states[node]["stack"] -= paid
             small_raise_ev, __ = self.__tree_search(not node, new_player_states)
 
             big_raise = min_amount + 3 * (my_state["stack"] - min_amount) // 4
             new_player_states = copy.deepcopy(player_states)
-            new_player_states[node]["add_amount"] = big_raise - op_state["amount"]
-            new_player_states[node]["amount"] = big_raise
+            paid = small_raise - new_player_states[node]["amount"]
+            new_player_states[node]["add_amount"] = small_raise - op_state["amount"]
+            new_player_states[node]["amount"] = small_raise
+            new_player_states[node]["in_pot"] += paid
+            new_player_states[node]["stack"] -= paid
             big_raise_ev, __ = self.__tree_search(not node, new_player_states)
 
         if node == 0:
