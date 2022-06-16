@@ -25,11 +25,11 @@ class bcolors:
 
 # pFold, pCall, pSmallRaise, pBigRaise for different hand strength
 opponent_model = [
-                    [0.9,  0.05,  0.05], # very weak hand 
-                    [0.7,  0.15,  0.15], # weak hand 
-                    [0.5,  0.25,  0.25], # medium hand 
-                    [0.1,  0.50,  0.35], # strong hand 
-                    [0.05, 0.545, 0.45]  # very strong hand 
+                    [0.9, 0.05, 0.05], # very weak hand 
+                    [0.7, 0.15, 0.15], # weak hand 
+                    [0.5, 0.25, 0.25], # medium hand 
+                    [0.1, 0.70, 0.20], # strong hand 
+                    [0.0, 0.80, 0.20]  # very strong hand 
                  ]
 preflop_HS = [
                 [.85, .68, .67, .66, .66, .64, .63, .63, .62, .62, .61, .60, .59], 
@@ -64,6 +64,8 @@ class TSPlayer(BasePokerPlayer):
         fold_action_info = valid_actions[0]
         call_action_info = valid_actions[1]
         raise_action_info = valid_actions[2]
+        
+        print(f'{bcolors.OKCYAN}My HS: {self.player_states[0]["HS"]}{bcolors.ENDC}')
 
         if self.street == "preflop":
             if self.lead - (self.remaining_round * self.BB_amount * 2) > 0:
@@ -301,6 +303,8 @@ class TSPlayer(BasePokerPlayer):
         # *FOLD*
         #print(f"{bcolors.OKBLUE}FOLD{bcolors.ENDC}")
         fold_ev = - my_state["in_pot"]
+        if node == 1:
+            fold_ev *= -1
 
         # *CALL*
         #print(f"{bcolors.OKBLUE}CALL{bcolors.ENDC}")
@@ -312,6 +316,8 @@ class TSPlayer(BasePokerPlayer):
                 call_ev += op_state["in_pot"]
             if my_state["HS"] < op_state["HS"]:
                 call_ev -= op_state["in_pot"]
+            if node == 1:
+                call_ev *= -1
 
         else: # The Street Continues
             if op_state["amount"] <= my_state["stack"]:
@@ -327,8 +333,14 @@ class TSPlayer(BasePokerPlayer):
                     op_action_prob = copy.deepcopy(opponent_model[op_state["HS"]])
                     total_raise_prob = op_action_prob.pop()
                     child_raise_num = len(evs) - 2
+
                     if child_raise_num > 0:
-                        raise_probs = np.array([i for i in range(1, child_raise_num + 1)])
+                        raise_probs = []
+                        tmp = 0.5
+                        for i in range(child_raise_num):
+                            raise_probs.append(tmp)
+                            tmp *= tmp
+                        raise_probs = np.array(raise_probs)
                         raise_probs = raise_probs / sum(raise_probs)
                     for i in range(child_raise_num):
                         op_action_prob.append(raise_probs[i] * total_raise_prob)
@@ -342,6 +354,8 @@ class TSPlayer(BasePokerPlayer):
                     call_ev += (my_state["in_pot"] + my_state["stack"])
                 if my_state["HS"] < op_state["HS"]:
                     call_ev -= (my_state["in_pot"] + my_state["stack"])
+                if node == 1:
+                    call_ev *= -1
 
         # *RAISE*
         #print(f"{bcolors.OKBLUE}*RAISE*{bcolors.ENDC}")
@@ -378,7 +392,12 @@ class TSPlayer(BasePokerPlayer):
                     child_raise_num = len(evs) - 2
                     #print(f"{bcolors.OKBLUE}3, {child_raise_num}{bcolors.ENDC}")
                     if child_raise_num > 0:
-                        raise_probs = np.array([i for i in range(1, child_raise_num + 1)])
+                        raise_probs = []
+                        tmp = 0.5
+                        for i in range(child_raise_num):
+                            raise_probs.append(tmp)
+                            tmp *= tmp
+                        raise_probs = np.array(raise_probs)
                         raise_probs = raise_probs / sum(raise_probs)
                         #print(f"{bcolors.OKBLUE}3.5, {raise_probs}{bcolors.ENDC}")
                     for i in range(child_raise_num):
