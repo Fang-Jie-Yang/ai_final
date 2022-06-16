@@ -1,5 +1,14 @@
 from game.players import BasePokerPlayer
-from numpy import argmax
+
+import sys
+sys.path.append("/tmp2/b08902059/python-packages")
+sys.path.append("agents/holdem_calc")
+
+import numpy as np
+
+import random
+
+import parallel_holdem_calc as Probability
 
 import copy
 
@@ -40,16 +49,45 @@ preflop_HS = [
 # for the above table
 order = {'A': 0, '2': 12, '3': 11, '4': 10, '5': 9, '6': 8, '7': 7, '8': 6, '9': 5, 'T': 4, 'J': 3, 'Q': 2, 'K': 1}
 
-class 
-
 class TSPlayer(BasePokerPlayer):
-
 
     def declare_action(self, valid_actions, hole_card, round_state):
 
-        for op_HS in range(5):
+        '''
+        call_action_info = valid_actions[1]
+
+        action, amount = call_action_info["action"], call_action_info["amount"]
 
         return action, amount  # action returned here is sent to the poker engine
+        '''
+        fold_action_info = valid_actions[0]
+        call_action_info = valid_actions[1]
+        raise_action_info = valid_actions[2]
+
+        HS_range = [0, 1, 2, 3, 4]
+        simulate_list = random.choices(HS_range, weights=tuple(self.op_HS_assumption), k=300)
+        evs = [0, 0, 0, 0]
+        for op_HS in simulate_list:
+            self.player_states[1]["HS"] = op_HS
+            best_ev, best_action = self.__tree_search(0, self.player_states)
+            evs[best_action] += best_ev
+        print(f"{bcolors.OKBLUE}{evs}{bcolors.ENDC}")
+        choice = np.argmax(evs)
+        if max(evs) == 0:
+            choice = 1
+
+        if choice == 0:
+            action, amount = fold_action_info["action"], fold_action_info["amount"]
+        if choice == 1:
+            action, amount = call_action_info["action"], call_action_info["amount"]
+        if choice == 2:
+            action, amount = raise_action_info["action"], raise_action_info["amount"]["min"]
+        if choice == 3:
+            action, amount = raise_action_info["action"], (raise_action_info["amount"]["min"] + raise_action_info["amount"]["min"]) // 3
+        print(f"{bcolors.OKBLUE}{action}{bcolors.ENDC}")
+
+        return action, amount  # action returned here is sent to the poker engine
+
 
 
     # player state
@@ -69,9 +107,10 @@ class TSPlayer(BasePokerPlayer):
     #         "amount": -> init at street, update with action
     #         "stack": -> init at street, update with action
     #         "add_amount": -1 or real value -> init at street, update with action
-    #         "HS": -> init with assumption, update with action
+    #         "HS": -> init with assumption, update with action, street
     #     }
     # ]
+    # op_HS_assumption = [a, b, c, d, e]
     # game:
     #   SB_amount, BB_amount, init_stack, max_round
 
@@ -82,6 +121,9 @@ class TSPlayer(BasePokerPlayer):
         self.BB_amount = game_info["rule"]["small_blind_amount"] * 2
         self.player_states = [{"pos": -1, "amount": -1, "stack": -1, "add_amount": -1, "HS": -1},
                               {"pos": -1, "amount": -1, "stack": -1, "add_amount": -1, "HS": -1}]
+        print(f"{bcolors.OKGREEN}(Game Start) Init player_states{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[0]}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[1]}{bcolors.ENDC}")
         return 
  
     # round:
@@ -117,6 +159,12 @@ class TSPlayer(BasePokerPlayer):
             self.player_states[0]["HS"] = 3
         else:
             self.player_states[0]["HS"] = 4
+
+        self.op_HS_assumption = [20, 20, 20, 20, 20]
+
+        print(f"{bcolors.OKGREEN}(Round Start) Update player_states{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[0]}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[1]}{bcolors.ENDC}")
         return
 
     def __convert_card_format(self, card):
@@ -132,11 +180,13 @@ class TSPlayer(BasePokerPlayer):
         else:
             seat_no = 1
         if seat_no == round_state["dealer_btn"]:
-            self.pos = "second"
+            self.player_states[1]["pos"] = "first"
+            self.player_states[0]["pos"] = "second"
         else:
-            self.pos = "first"
-        self.player_states[0]["stack"] = seats[seat_no]["stack"]
-        self.player_states[1]["stack"] = seats[not seat_no]["stack"]
+            self.player_states[0]["pos"] = "first"
+            self.player_states[1]["pos"] = "second"
+        self.player_states[0]["stack"] = round_state["seats"][seat_no]["stack"]
+        self.player_states[1]["stack"] = round_state["seats"][not seat_no]["stack"]
 
         self.street = street
         self.community_card = round_state["community_card"]
@@ -162,6 +212,14 @@ class TSPlayer(BasePokerPlayer):
         self.player_states[1]["amount"] = 0
         self.player_states[0]["add_amount"] = -1
         self.player_states[1]["add_amount"] = -1
+
+        # update op HS
+        if self.street == "flop":
+            self.op_HS_assumption = [0, 25, 25, 25, 25]
+
+        print(f"{bcolors.OKGREEN}(Street Start) Update player_states{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[0]}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[1]}{bcolors.ENDC}")
         return
 
     # action:
@@ -169,18 +227,35 @@ class TSPlayer(BasePokerPlayer):
 
     def receive_game_update_message(self, action, round_state):
 
+
         last_action = round_state["action_histories"][self.street][-1]
 
         if last_action["uuid"] == self.uuid:
             player = 0
         else:
             player = 1
+
         if last_action["action"] == "FOLD":
             return
+
         self.player_states[player]["amount"] = last_action["amount"]
         self.player_states[player]["stack"] -= last_action["paid"]
+
         if "add_amount" in last_action:
             self.player_states[player]["add_amount"] = last_action["add_amount"]
+
+        print(f"{bcolors.OKGREEN}(Action) Update player_states{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[0]}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{self.player_states[1]}{bcolors.ENDC}")
+
+        # update op HS
+        if player == 1:
+            if last_action["amount"] / self.player_states[player]["stack"] > 0.1:
+                orign = np.array(self.op_HS_assumption)
+                shift = np.array([0, -5, -5, 5, 5])
+                self.op_HS_assumption = orign + shift
+
+        print(f"{bcolors.OKGREEN}{self.op_HS_assumption}{bcolors.ENDC}")
         return
 
     def receive_round_result_message(self, winners, hand_info, round_state):
@@ -189,31 +264,42 @@ class TSPlayer(BasePokerPlayer):
     # return best_ev, best_action
     def __tree_search(self, node, player_states):
 
+
         my_state = player_states[node]
         op_state = player_states[not node]
 
         # *FOLD*
+        #print(f"{bcolors.OKBLUE}FOLD{bcolors.ENDC}")
         fold_ev = - my_state["amount"]
+
         # *CALL*
+        #print(f"{bcolors.OKBLUE}CALL{bcolors.ENDC}")
         call_ev = 0
         if my_state["pos"] == "second" or op_state["add_amount"] != -1: # The Street Ends
-            if my_state["HS"] > op_state["HS"]
+            #print(f"{bcolors.OKBLUE}CALL-STOP-1{bcolors.ENDC}")
+
+            if my_state["HS"] > op_state["HS"]:
                 call_ev += op_state["amount"]
-            if me_state["HS"] < op_state["HS"]
+            if my_state["HS"] < op_state["HS"]:
                 call_ev -= my_state["amount"]
+
         else: # The Street Continues
             if op_state["amount"] <= my_state["stack"]:
                 # *CALL*: Street Continues
+                #print(f"{bcolors.OKBLUE}CALL-RECURR{bcolors.ENDC}")
                 new_player_states = copy.deepcopy(player_states)
                 new_player_states[node]["amount"] = new_player_states[not node]["amount"]
                 call_ev, __ = self.__tree_search(not node, new_player_states)
             else: 
                 # *ALL-IN*: straight to the showdown
+                #print(f"{bcolors.OKBLUE}CALL-STOP-2{bcolors.ENDC}")
                 if my_state["HS"] > op_state["HS"]:
                     call_ev += my_state["stack"]
                 if my_state["HS"] < op_state["HS"]:
                     call_ev -= my_state["stack"]
+
         # *RAISE*
+        #print(f"{bcolors.OKBLUE}RAISE{bcolors.ENDC}")
         small_raise_ev = 0
         big_raise_ev = 0
         if op_state["add_amount"] == -1:
@@ -237,7 +323,7 @@ class TSPlayer(BasePokerPlayer):
 
         if node == 0:
             best_ev = max([fold_ev, call_ev, small_raise_ev, big_raise_ev])
-            best_action = argmax([fold_ev, call_ev, small_raise_ev, big_raise_ev])
+            best_action = np.argmax([fold_ev, call_ev, small_raise_ev, big_raise_ev])
         else:
             best_ev = 0
             best_ev -= fold_ev * opponent_model[my_state["HS"]][0]
