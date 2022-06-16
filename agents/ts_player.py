@@ -6,7 +6,7 @@ sys.path.append("agents/holdem_calc")
 
 import numpy as np
 
-import random
+import math
 
 import parallel_holdem_calc as Probability
 
@@ -23,13 +23,13 @@ class bcolors:
     BOLD      = '\033[1m'
     UNDERLINE = '\033[4m'
 
-# pFold, pCall, pRaise for different hand strength
+# pFold, pCall, pSmallRaise, pBigRaise for different hand strength
 opponent_model = [
-                    [0.9, 0.05, 0.025, 0.025], # very weak hand 
-                    [0.7, 0.15, 0.075, 0.075], # weak hand 
-                    [0.5, 0.25, 0.125, 0.125], # medium hand 
-                    [0.3, 0.35, 0.150, 0.200], # strong hand 
-                    [0.1, 0.45, 0.150, 0.250]  # very strong hand 
+                    [0.9,  0.05,  0.05], # very weak hand 
+                    [0.7,  0.15,  0.15], # weak hand 
+                    [0.5,  0.25,  0.25], # medium hand 
+                    [0.1,  0.50,  0.35], # strong hand 
+                    [0.05, 0.545, 0.45]  # very strong hand 
                  ]
 preflop_HS = [
                 [.85, .68, .67, .66, .66, .64, .63, .63, .62, .62, .61, .60, .59], 
@@ -66,17 +66,26 @@ class TSPlayer(BasePokerPlayer):
         raise_action_info = valid_actions[2]
 
         if self.street == "preflop":
-            if self.player_states[0]["HS"] <= 1:
+            if self.lead - (self.remaining_round * self.BB_amount * 2) > 0:
+                action = fold_action_info["action"]
+                amount = fold_action_info["amount"]
+            elif self.player_states[0]["HS"] <= 1:
                 action = fold_action_info["action"]
                 amount = fold_action_info["amount"]
             else:
                 action = call_action_info["action"]
                 amount = call_action_info["amount"]
             return action, amount
-
-        HS_range = [0, 1, 2, 3, 4]
-        avg_evs = np.array([0, 0, 0, 0])
-
+        
+        rmin = raise_action_info["amount"]["min"]
+        rmax = raise_action_info["amount"]["max"]
+        if rmin != -1:
+            raise_num = math.floor((rmax - rmin) / (5 * self.BB_amount))
+        else:
+            raise_num = 1
+        
+        # fold, call, raise0, raise1, ..., raiseN
+        avg_evs = np.zeros(2 + raise_num)
         for op_HS in range(5):
             if self.op_HS_assumption[op_HS] == 0:
                 continue
@@ -93,19 +102,16 @@ class TSPlayer(BasePokerPlayer):
         elif choice == 1:
             action = call_action_info["action"]
             amount = call_action_info["amount"]
-        elif raise_action_info["amount"]["min"] == -1:
+        elif rmin == -1:
             action = call_action_info["action"]
             amount = call_action_info["amount"]
-        elif choice == 2:
+        else:
             action = raise_action_info["action"]
-            amount = raise_action_info["amount"]["min"]
-        elif choice == 3:
-            action = raise_action_info["action"]
-            amount = (raise_action_info["amount"]["min"] + raise_action_info["amount"]["max"]) // 3
-        print(f"{bcolors.OKBLUE}{action}{bcolors.ENDC}")
+            offset = choice - 2
+            amount = rmin + offset * (5 * self.BB_amount)
+        print(f"{bcolors.OKBLUE}{action}, {amount}{bcolors.ENDC}")
 
-        return action, amount  # action returned here is sent to the poker engine
-
+        return action, int(amount)  # action returned here is sent to the poker engine
 
     # player state
     # [
@@ -286,7 +292,7 @@ class TSPlayer(BasePokerPlayer):
     def receive_round_result_message(self, winners, hand_info, round_state):
         pass
 
-    # return [fold_ev, call_ev, small_raise_ev, big_raise_ev]
+    # return [fold_ev, call_ev, raise_ev0, raise_ev1, ..., raise_evN]
     def __tree_search(self, node, player_states):
 
         my_state = player_states[node]
@@ -316,8 +322,17 @@ class TSPlayer(BasePokerPlayer):
                 new_player_states[node]["stack"] -= (new_player_states[not node]["in_pot"] - new_player_states[node]["in_pot"])
                 new_player_states[node]["in_pot"] = new_player_states[not node]["in_pot"]
                 evs = self.__tree_search(not node, new_player_states)
+
                 if node == 0:
-                    call_evs = sum([a * b for a, b in zip(evs, opponent_model[op_state["HS"]])])
+                    op_action_prob = copy.deepcopy(opponent_model[op_state["HS"]])
+                    total_raise_prob = op_action_prob.pop()
+                    child_raise_num = len(evs) - 2
+                    if child_raise_num > 0:
+                        raise_probs = np.array([i for i in range(1, child_raise_num + 1)])
+                        raise_probs = raise_probs / sum(raise_probs)
+                    for i in range(child_raise_num):
+                        op_action_prob.append(raise_probs[i] * total_raise_prob)
+                    call_evs = sum([a * b for a, b in zip(evs, op_action_prob)])
                 else:
                     call_evs = max(evs)
             else: 
@@ -329,43 +344,54 @@ class TSPlayer(BasePokerPlayer):
                     call_ev -= (my_state["in_pot"] + my_state["stack"])
 
         # *RAISE*
-        #print(f"{bcolors.OKBLUE}RAISE{bcolors.ENDC}")
-        small_raise_ev = 0
-        big_raise_ev = 0
+        #print(f"{bcolors.OKBLUE}*RAISE*{bcolors.ENDC}")
         if op_state["add_amount"] == -1:
             min_amount = my_state["amount"] + self.BB_amount
         else:
             min_amount = op_state["amount"] + op_state["add_amount"]
         # IF CAN RAISE
+        raise_evs = []
         if min_amount <= my_state["stack"]:
 
-            small_raise = min_amount + (my_state["stack"] - min_amount) // 4
-            new_player_states = copy.deepcopy(player_states)
-            paid = small_raise - new_player_states[node]["amount"]
-            new_player_states[node]["add_amount"] = small_raise - op_state["amount"]
-            new_player_states[node]["amount"] = small_raise
-            new_player_states[node]["in_pot"] += paid
-            new_player_states[node]["stack"] -= paid
-            evs = self.__tree_search(not node, new_player_states)
-            if node == 0:
-                small_raise_ev = sum([a * b for a, b in zip(evs, opponent_model[op_state["HS"]])])
-            else:
-                small_raise_ev = max(evs)
+            max_amount = my_state["stack"]
 
-            big_raise = min_amount + (my_state["stack"] - min_amount) // 2
-            new_player_states = copy.deepcopy(player_states)
-            paid = big_raise - new_player_states[node]["amount"]
-            new_player_states[node]["add_amount"] = big_raise - op_state["amount"]
-            new_player_states[node]["amount"] = big_raise
-            new_player_states[node]["in_pot"] += paid
-            new_player_states[node]["stack"] -= paid
-            evs = self.__tree_search(not node, new_player_states)
-            if node == 0:
-                big_raise_ev = sum([a * b for a, b in zip(evs, opponent_model[op_state["HS"]])])
-            else:
-                big_raise_ev = max(evs)
+            raise_num = math.floor((max_amount - min_amount) / (5 * self.BB_amount))
+            
+            for i in range(raise_num):
 
-        return np.array([fold_ev, call_ev, small_raise_ev, big_raise_ev])
+                raise_amount = min_amount + i * (5 * self.BB_amount)
+                new_player_states = copy.deepcopy(player_states)
+                paid = raise_amount - new_player_states[node]["amount"]
+                new_player_states[node]["add_amount"] = raise_amount - op_state["amount"]
+                new_player_states[node]["amount"] = raise_amount
+                new_player_states[node]["in_pot"] += paid
+                new_player_states[node]["stack"] -= paid
+                #print(f"{bcolors.OKBLUE}RAISE ITER: {i} BEFORE RECUR{bcolors.ENDC}")
+                evs = self.__tree_search(not node, new_player_states)
+                #print(f"{bcolors.OKBLUE}RAISE ITER: {i} AFTER RECUR{bcolors.ENDC}")
+
+                if node == 0:
+                    op_action_prob = copy.deepcopy(opponent_model[op_state["HS"]])
+                    #print(f"{bcolors.OKBLUE}1, {op_action_prob}{bcolors.ENDC}")
+                    total_raise_prob = op_action_prob.pop()
+                    #print(f"{bcolors.OKBLUE}2, {total_raise_prob}{bcolors.ENDC}")
+                    child_raise_num = len(evs) - 2
+                    #print(f"{bcolors.OKBLUE}3, {child_raise_num}{bcolors.ENDC}")
+                    if child_raise_num > 0:
+                        raise_probs = np.array([i for i in range(1, child_raise_num + 1)])
+                        raise_probs = raise_probs / sum(raise_probs)
+                        #print(f"{bcolors.OKBLUE}3.5, {raise_probs}{bcolors.ENDC}")
+                    for i in range(child_raise_num):
+                        op_action_prob.append(raise_probs[i] * total_raise_prob)
+                    #print(f"{bcolors.OKBLUE}4, {op_action_prob}{bcolors.ENDC}")
+                    #print(f"{bcolors.OKBLUE}5, {len(evs)}{bcolors.ENDC}")
+                    raise_evs.append(sum([a * b for a, b in zip(evs, op_action_prob)]))
+                else:
+                    raise_evs.append(max(evs))
+
+        ret_evs = [fold_ev, call_ev]
+        ret_evs.extend(raise_evs)
+        return np.array(ret_evs)
 
 
 def setup_ai():
