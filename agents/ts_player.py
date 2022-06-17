@@ -26,9 +26,14 @@ class bcolors:
 # pFold, pCall, pSmallRaise, pBigRaise for different hand strength
 opponent_model = [
                     [0.9, 0.05, 0.05], # very weak hand 
+                    [0.9, 0.05, 0.05], # very weak hand 
+                    [0.7, 0.15, 0.15], # weak hand 
                     [0.7, 0.15, 0.15], # weak hand 
                     [0.5, 0.25, 0.25], # medium hand 
+                    [0.5, 0.25, 0.25], # medium hand 
                     [0.1, 0.70, 0.20], # strong hand 
+                    [0.1, 0.70, 0.20], # strong hand 
+                    [0.0, 0.80, 0.20], # very strong hand 
                     [0.0, 0.80, 0.20]  # very strong hand 
                  ]
 preflop_HS = [
@@ -68,10 +73,20 @@ class TSPlayer(BasePokerPlayer):
         print(f'{bcolors.OKCYAN}My HS: {self.player_states[0]["HS"]}{bcolors.ENDC}')
 
         if self.street == "preflop":
+            # already won
             if self.lead - (self.remaining_round * self.BB_amount * 2) > 0:
                 action = fold_action_info["action"]
                 amount = fold_action_info["amount"]
-            elif self.player_states[0]["HS"] <= 1:
+            # bad hole
+            elif self.player_states[0]["HS"] < 2:
+                action = fold_action_info["action"]
+                amount = fold_action_info["amount"]
+            # op big raise, medium/weak hole
+            elif call_action_info["amount"] > self.BB_amount * 15 and self.player_states[0]["HS"] < 8:
+                action = fold_action_info["action"]
+                amount = fold_action_info["amount"]
+            # op samll raise, weak hole
+            elif call_action_info["amount"] > self.BB_amount * 5 and self.player_states[0]["HS"] < 4:
                 action = fold_action_info["action"]
                 amount = fold_action_info["amount"]
             else:
@@ -88,7 +103,8 @@ class TSPlayer(BasePokerPlayer):
         
         # fold, call, raise0, raise1, ..., raiseN
         avg_evs = np.zeros(2 + raise_num)
-        for op_HS in range(5):
+        print(f"{bcolors.OKBLUE}Assumption on op HS:{self.op_HS_assumption}{bcolors.ENDC}")
+        for op_HS in range(10):
             if self.op_HS_assumption[op_HS] == 0:
                 continue
             self.player_states[1]["HS"] = op_HS
@@ -137,7 +153,7 @@ class TSPlayer(BasePokerPlayer):
     #         "HS": -> init with assumption, update with action, street
     #     }
     # ]
-    # op_HS_assumption = [a, b, c, d, e]
+    # op_HS_assumption = [n0, n1, ..., n9]
     # game:
     #   SB_amount, BB_amount, init_stack, max_round
 
@@ -176,6 +192,10 @@ class TSPlayer(BasePokerPlayer):
         else:
             pWin = preflop_HS[j][i]
 
+        self.player_states[0]["HS"] = math.floor(pWin * 10 - 0.001)
+        if self.player_states[0]["HS"] < 0:
+            self.player_states[0]["HS"] = 0
+        '''
         if pWin <= 0.2:
             self.player_states[0]["HS"] = 0
         elif pWin <= 0.4:
@@ -186,8 +206,8 @@ class TSPlayer(BasePokerPlayer):
             self.player_states[0]["HS"] = 3
         else:
             self.player_states[0]["HS"] = 4
-
-        self.op_HS_assumption = [0.2, 0.2, 0.2, 0.2, 0.2]
+        '''
+        self.op_HS_assumption = [0.1 for _ in range(10)]
 
         #print(f"{bcolors.OKGREEN}(Round Start) Update player_states{bcolors.ENDC}")
         #print(f"{bcolors.OKGREEN}{self.player_states[0]}{bcolors.ENDC}")
@@ -230,6 +250,10 @@ class TSPlayer(BasePokerPlayer):
             holes.extend(["?", "?"])
             # Arguments: board, Exact, N(Monte-Carl), file_input, holes, Verbose
             pTie, pWin, pLose = Probability.calculate(board, True, 1, None, holes, False)
+            self.player_states[0]["HS"] = math.floor(pWin * 10 - 0.001)
+            if self.player_states[0]["HS"] < 0:
+                self.player_states[0]["HS"] = 0
+            '''
             if pWin <= 0.2:
                 self.player_states[0]["HS"] = 0
             elif pWin <= 0.4:
@@ -240,6 +264,7 @@ class TSPlayer(BasePokerPlayer):
                 self.player_states[0]["HS"] = 3
             else:
                 self.player_states[0]["HS"] = 4
+            '''
 
         self.player_states[0]["amount"] = 0
         self.player_states[1]["amount"] = 0
@@ -248,7 +273,7 @@ class TSPlayer(BasePokerPlayer):
 
         # update op HS
         if self.street == "flop":
-            self.op_HS_assumption = [0, 0.1, 0.3, 0.3, 0.3]
+            self.op_HS_assumption = [0, 0, 0.05, 0.05, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15]
 
         #print(f"{bcolors.OKGREEN}(Street Start) Update player_states{bcolors.ENDC}")
         #print(f"{bcolors.OKGREEN}{self.player_states[0]}{bcolors.ENDC}")
@@ -285,7 +310,7 @@ class TSPlayer(BasePokerPlayer):
         if player == 1:
             if last_action["amount"] / (self.player_states[player]["stack"] + 0.1) > 0.1:
                 orign = np.array(self.op_HS_assumption)
-                shift = np.array([0, -0.05, -0.05, 0.05, 0.05])
+                shift = np.array([0, 0, -0.025, -0.025, -0.025, -0.025, 0.025, 0.025, 0.025, 0.025])
                 self.op_HS_assumption = orign + shift
 
         #print(f"{bcolors.OKGREEN}{self.op_HS_assumption}{bcolors.ENDC}")
