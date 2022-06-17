@@ -71,7 +71,7 @@ class OPMPlayer(BasePokerPlayer):
         call_action_info = valid_actions[1]
         raise_action_info = valid_actions[2]
         
-        print(f'{bcolors.OKCYAN}My HS: {self.player_states[0]["HS"]}{bcolors.ENDC}')
+        #print(f'{bcolors.OKCYAN}My HS: {self.player_states[0]["HS"]}{bcolors.ENDC}')
 
         if self.street == "preflop":
             # already won
@@ -106,7 +106,7 @@ class OPMPlayer(BasePokerPlayer):
         avg_evs = np.zeros(2 + raise_num)
 
         temp_display = ["{0:0.2f}".format(i) for i in self.op_HS_assumption]
-        print(f"{bcolors.OKBLUE}Assumption on op HS:\n{temp_display}{bcolors.ENDC}")
+        #print(f"{bcolors.OKBLUE}Assumption on op HS:\n{temp_display}{bcolors.ENDC}")
 
         for op_HS in range(10):
             #print(f"{bcolors.OKBLUE}{op_HS}{bcolors.ENDC}")
@@ -117,11 +117,11 @@ class OPMPlayer(BasePokerPlayer):
             avg_evs = avg_evs + HS_ev * self.op_HS_assumption[op_HS]
 
         
-        print(f"{bcolors.OKBLUE}Fold : {avg_evs[0]}{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}Call : {avg_evs[1]}{bcolors.ENDC}")
+        #print(f"{bcolors.OKBLUE}Fold : {avg_evs[0]}{bcolors.ENDC}")
+        #print(f"{bcolors.OKBLUE}Call : {avg_evs[1]}{bcolors.ENDC}")
         if raise_num > 0:
             temp_display = ["{0:0.2f}".format(i) for i in avg_evs[2:]]
-            print(f"{bcolors.OKBLUE}Raise: {temp_display}{bcolors.ENDC}")
+            #print(f"{bcolors.OKBLUE}Raise: {temp_display}{bcolors.ENDC}")
 
         choice = np.argmax(avg_evs)
         if choice == 0:
@@ -137,7 +137,7 @@ class OPMPlayer(BasePokerPlayer):
             action = raise_action_info["action"]
             offset = choice - 2
             amount = rmin + offset * ((10 * self.BB_amount))
-        print(f"{bcolors.OKGREEN}{action}, {amount}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}{action}, {amount}{bcolors.ENDC}")
 
         return action, int(amount)  # action returned here is sent to the poker engine
 
@@ -348,11 +348,11 @@ class OPMPlayer(BasePokerPlayer):
             op_type = 1
         else:
             op_type = 2
-        print(f"{bcolors.OKGREEN}** OPM **{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}Aggression Fequency  : {self.op_aggression_feq}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}Average Street Played: {self.op_avg_street_played}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}Assumed Oppenent Type: {op_type}{bcolors.ENDC}")
-        print(f"{bcolors.OKGREEN}*********{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}** OPM **{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Aggression Fequency  : {self.op_aggression_feq}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Average Street Played: {self.op_avg_street_played}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}Assumed Oppenent Type: {op_type}{bcolors.ENDC}")
+        #print(f"{bcolors.OKGREEN}*********{bcolors.ENDC}")
 
         # update ratio
         raise_update_rule = \
