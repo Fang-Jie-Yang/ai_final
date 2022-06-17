@@ -99,7 +99,7 @@ class TSPlayer(BasePokerPlayer):
         if rmin != -1:
             raise_num = math.floor((rmax - rmin) / (5 * self.BB_amount))
         else:
-            raise_num = 1
+            raise_num = 0
         
         # fold, call, raise0, raise1, ..., raiseN
         avg_evs = np.zeros(2 + raise_num)
