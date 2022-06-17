@@ -104,7 +104,10 @@ class OPMPlayer(BasePokerPlayer):
         
         # fold, call, raise0, raise1, ..., raiseN
         avg_evs = np.zeros(2 + raise_num)
-        print(f"{bcolors.OKBLUE}Assumption on op HS:\n{self.op_HS_assumption}{bcolors.ENDC}")
+
+        temp_display = ["{0:0.2f}".format(i) for i in self.op_HS_assumption]
+        print(f"{bcolors.OKBLUE}Assumption on op HS:\n{temp_display}{bcolors.ENDC}")
+
         for op_HS in range(10):
             #print(f"{bcolors.OKBLUE}{op_HS}{bcolors.ENDC}")
             if self.op_HS_assumption[op_HS] == 0:
@@ -114,10 +117,11 @@ class OPMPlayer(BasePokerPlayer):
             avg_evs = avg_evs + HS_ev * self.op_HS_assumption[op_HS]
 
         
-        print(f"{bcolors.OKBLUE}\tFold : {avg_evs[0]}{bcolors.ENDC}")
-        print(f"{bcolors.OKBLUE}\tCall : {avg_evs[1]}{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}Fold : {avg_evs[0]}{bcolors.ENDC}")
+        print(f"{bcolors.OKBLUE}Call : {avg_evs[1]}{bcolors.ENDC}")
         if raise_num > 0:
-            print(f"{bcolors.OKBLUE}\tRaise: {avg_evs[2:]}{bcolors.ENDC}")
+            temp_display = ["{0:0.2f}".format(i) for i in avg_evs[2:]]
+            print(f"{bcolors.OKBLUE}Raise: {temp_display}{bcolors.ENDC}")
 
         choice = np.argmax(avg_evs)
         if choice == 0:
@@ -133,7 +137,7 @@ class OPMPlayer(BasePokerPlayer):
             action = raise_action_info["action"]
             offset = choice - 2
             amount = rmin + offset * ((10 * self.BB_amount))
-        print(f"{bcolors.OKBLUE}{action}, {amount}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{action}, {amount}{bcolors.ENDC}")
 
         return action, int(amount)  # action returned here is sent to the poker engine
 
@@ -344,17 +348,21 @@ class OPMPlayer(BasePokerPlayer):
             op_type = 1
         else:
             op_type = 2
-        print(f"{bcolors.OKGREEN}Assume op type: {op_type}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}** OPM **{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}Aggression Fequency  : {self.op_aggression_feq}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}Average Street Played: {self.op_avg_street_played}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}Assumed Oppenent Type: {op_type}{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}*********{bcolors.ENDC}")
 
         # update ratio
         raise_update_rule = \
         [ [0.5, 0.5, 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   ],
-          [0.5, 0.5, 0.5 , 0.5 , 1.25, 1.25, 1.25, 1.25, 1.25, 1.25],
-          [0.5, 0.5, 0.5 , 0.5 , 1.25, 1.25, 1.25, 1.50, 1.50, 1.50] ]
+          [0.5, 0.5, 0.5 , 0.5 , 1.25, 1.25, 1.50, 1.50, 1.50, 1.50],
+          [0.5, 0.5, 0.5 , 0.5 , 1.25, 1.25, 1.50, 1.50, 2.00, 2.00] ]
         call_update_rule = \
         [ [0.5, 0.5, 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   ],
           [0.5, 0.5, 1   , 1   , 1.25, 1.25, 1.25, 1.25, 1.25, 1.25],
-          [0.5, 0.5, 0.5 , 0.5 , 1.25, 1.25, 1.25, 1.25, 1.25, 1.25] ]
+          [0.5, 0.5, 0.5 , 0.5 , 1.25, 1.25, 1.50, 1.50, 1.50, 1.50] ]
 
         if last_action["action"] == "CALL":
             new_assumption = np.array([a*b for a,b in zip(self.op_HS_assumption, call_update_rule[op_type])])
